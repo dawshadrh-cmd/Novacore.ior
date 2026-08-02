@@ -259,6 +259,67 @@
   .form-note{font-size:13px;color:rgba(255,255,255,.5);margin-top:-4px;}
   .form-note.success{color:var(--gold-light);}
   .form-note.error{color:#e88;}
+
+  /* Apply / Candidate form */
+  .apply{background:var(--paper-dim);}
+  .apply-form{
+    max-width:640px;margin:0 auto;text-align:left;
+    display:flex;flex-direction:column;gap:16px;
+    background:var(--white);border:1px solid var(--line);
+    border-radius:18px;padding:36px;
+    box-shadow:0 20px 45px rgba(15,31,61,0.06);
+  }
+  .field-light{display:flex;flex-direction:column;gap:6px;}
+  .field-light label{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--grey);
+  }
+  .field-light label .opt{text-transform:none;font-style:italic;opacity:.7;letter-spacing:0;}
+  .field-light input, .field-light textarea, .field-light select{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;padding:12px 14px;
+    color:var(--ink);font-family:'Inter',sans-serif;font-size:14.5px;
+    resize:vertical;transition:border-color .2s, background .2s;
+  }
+  .field-light input::placeholder, .field-light textarea::placeholder{color:rgba(27,35,51,0.35);}
+  .field-light input:focus, .field-light textarea:focus, .field-light select:focus{
+    outline:none;border-color:var(--gold);background:var(--white);
+  }
+  .field-light input[type="file"]{padding:9px 12px;cursor:pointer;}
+  .apply-form .btn-primary{align-self:flex-start;border:none;font:inherit;font-weight:600;margin-top:6px;}
+  .apply-note{font-size:13px;color:var(--grey);margin-top:-4px;}
+  .apply-note.success{color:#2f7a4f;}
+  .apply-note.error{color:#c0392b;}
+
+  /* Feedback section */
+  .feedback{background:var(--navy-mid);color:var(--white);}
+  .feedback .section-head h2{color:var(--white);}
+  .feedback .section-head p{color:rgba(255,255,255,.65);}
+  .feedback-form{
+    max-width:640px;margin:0 auto;text-align:left;
+    display:flex;flex-direction:column;gap:16px;
+  }
+  .feedback-form .field-dark{display:flex;flex-direction:column;gap:6px;}
+  .feedback-form .field-dark label{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;
+    text-transform:uppercase;color:rgba(255,255,255,.55);
+  }
+  .feedback-form .field-dark input, .feedback-form .field-dark textarea{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:10px;padding:12px 14px;
+    color:var(--white);font-family:'Inter',sans-serif;font-size:14.5px;
+    resize:vertical;transition:border-color .2s, background .2s;
+  }
+  .feedback-form .field-dark input::placeholder, .feedback-form .field-dark textarea::placeholder{color:rgba(255,255,255,0.35);}
+  .feedback-form .field-dark input:focus, .feedback-form .field-dark textarea:focus{
+    outline:none;border-color:var(--gold);background:rgba(255,255,255,0.09);
+  }
+  .feedback-form .btn-primary{align-self:flex-start;border:none;font:inherit;font-weight:600;}
+  .feedback-note{font-size:13px;color:rgba(255,255,255,.5);margin-top:-4px;}
+  .feedback-note.success{color:var(--gold-light);}
+  .feedback-note.error{color:#e88;}
   .contact-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:38px;}
   .contact-pill{
     display:flex;align-items:center;gap:8px;
@@ -391,6 +452,8 @@
       <a href="#expertise">Expertise</a>
       <a href="#packages">Packages</a>
       <a href="#why">Why NovaCore</a>
+      <a href="#apply">Candidates</a>
+      <a href="#feedback">Feedback</a>
       <a href="#contact">Contact</a>
     </nav>
     <a href="#contact" class="nav-cta">Start hiring</a>
@@ -569,6 +632,83 @@
     </div>
   </section>
 
+  <section class="apply" id="apply">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">For candidates</p>
+        <h2>Looking for your next role? Apply here.</h2>
+        <p>Fill in your details below and our team will review your profile. If you're a fit, we'll reach out to schedule a final evaluation call.</p>
+      </div>
+
+      <form id="applyForm" class="apply-form">
+        <div class="form-row">
+          <div class="field-light">
+            <label>Full Name</label>
+            <input type="text" name="fullName" placeholder="Your full name" required>
+          </div>
+          <div class="field-light">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="you@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field-light">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="01xxxxxxxxx" required>
+          </div>
+          <div class="field-light">
+            <label>Upload CV <span class="opt">(PDF only)</span></label>
+            <input type="file" name="cv" accept="application/pdf" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field-light">
+            <label>Last Salary</label>
+            <input type="text" name="lastSalary" placeholder="e.g. 15,000 EGP" required>
+          </div>
+          <div class="field-light">
+            <label>Years of Experience (Overall)</label>
+            <input type="text" name="expOverall" placeholder="e.g. 5 years" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field-light">
+            <label>Years of Experience (in this field)</label>
+            <input type="text" name="expField" placeholder="e.g. 3 years" required>
+          </div>
+          <div class="field-light">
+            <label>How did you hear about us?</label>
+            <select name="source" required>
+              <option value="" disabled selected>Select an option</option>
+              <option>LinkedIn</option>
+              <option>Instagram</option>
+              <option>WhatsApp Channel</option>
+              <option>Facebook</option>
+              <option>Friend / Referral</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-light">
+          <label>LinkedIn Profile <span class="opt">(optional)</span></label>
+          <input type="url" name="linkedin" placeholder="https://linkedin.com/in/...">
+        </div>
+
+        <div class="field-light">
+          <label>Projects / Portfolio Links <span class="opt">(optional)</span></label>
+          <textarea name="projects" rows="3" placeholder="Links or a short description of relevant projects"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="applySubmitBtn">Submit Application</button>
+        <p class="apply-note" id="applyNote">We usually get back to candidates within a few business days.</p>
+      </form>
+    </div>
+  </section>
+
   <section class="cta" id="contact">
     <div class="container cta-inner">
       <p class="eyebrow">Get in touch</p>
@@ -629,6 +769,43 @@
           LinkedIn
         </a>
       </div>
+    </div>
+  </section>
+
+  <section class="feedback" id="feedback">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">We're listening</p>
+        <h2>Got feedback for us?</h2>
+        <p>Whether it's a problem you ran into or an idea to make things better, we want to hear it.</p>
+      </div>
+
+      <form id="feedbackForm" class="feedback-form">
+        <div class="form-row">
+          <div class="field-dark">
+            <label for="fb-name">Full Name</label>
+            <input id="fb-name" type="text" name="fullName" placeholder="Your name" required>
+          </div>
+          <div class="field-dark">
+            <label for="fb-email">Email</label>
+            <input id="fb-email" type="email" name="email" placeholder="you@email.com" required>
+          </div>
+        </div>
+        <div class="field-dark">
+          <label for="fb-phone">Phone Number</label>
+          <input id="fb-phone" type="tel" name="phone" placeholder="01xxxxxxxxx" required>
+        </div>
+        <div class="field-dark">
+          <label for="fb-problems">What problems did you run into?</label>
+          <textarea id="fb-problems" name="problems" rows="3" placeholder="Tell us what went wrong or what could be better..." required></textarea>
+        </div>
+        <div class="field-dark">
+          <label for="fb-suggestions">Any suggestions?</label>
+          <textarea id="fb-suggestions" name="suggestions" rows="3" placeholder="Ideas, improvements, anything on your mind..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" id="feedbackSubmitBtn">Send Feedback</button>
+        <p class="feedback-note" id="feedbackNote">We read every submission personally.</p>
+      </form>
     </div>
   </section>
 </main>
@@ -698,6 +875,122 @@
       btn.textContent = 'Send message';
     }
   });
+
+  // Candidate application form -> Google Sheets CRM (via Apps Script Web App)
+  const APPLY_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxRsLIbsIt7fNW26K_y47p2tf3knA0hN5HptS84MPciDkOUOTiVNIvKA_Ovq0tyF0TaUg/exec';
+
+  const applyForm = document.getElementById('applyForm');
+  if (applyForm) {
+    applyForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('applySubmitBtn');
+      const note = document.getElementById('applyNote');
+      const fd = new FormData(applyForm);
+      const cvFile = fd.get('cv');
+
+      if (!cvFile || cvFile.size === 0) {
+        note.textContent = 'Please attach your CV (PDF) before submitting.';
+        note.className = 'apply-note error';
+        return;
+      }
+      if (cvFile.size > 5 * 1024 * 1024) {
+        note.textContent = 'CV file is too large. Please upload a PDF under 5MB.';
+        note.className = 'apply-note error';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+      note.textContent = '';
+      note.className = 'apply-note';
+
+      try {
+        const cvBase64 = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = reject;
+          reader.readAsDataURL(cvFile);
+        });
+
+        const payload = {
+          formType: 'candidate',
+          fullName: fd.get('fullName'),
+          email: fd.get('email'),
+          phone: fd.get('phone'),
+          lastSalary: fd.get('lastSalary'),
+          expOverall: fd.get('expOverall'),
+          expField: fd.get('expField'),
+          source: fd.get('source'),
+          linkedin: fd.get('linkedin') || '',
+          projects: fd.get('projects') || '',
+          cvBase64: cvBase64,
+          cvFileName: cvFile.name
+        };
+
+        await fetch(APPLY_WEB_APP_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(payload)
+        });
+
+        // no-cors means we can't read the response, so assume success if no network error
+        note.textContent = "Thanks! Your application was submitted. We'll be in touch soon.";
+        note.className = 'apply-note success';
+        applyForm.reset();
+      } catch (err) {
+        note.textContent = 'Something went wrong. Please try again or email us directly.';
+        note.className = 'apply-note error';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Submit Application';
+      }
+    });
+  }
+
+  // Feedback form -> Google Sheets CRM (via same Apps Script Web App)
+  const feedbackForm = document.getElementById('feedbackForm');
+  if (feedbackForm) {
+    feedbackForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('feedbackSubmitBtn');
+      const note = document.getElementById('feedbackNote');
+      const fd = new FormData(feedbackForm);
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      note.textContent = '';
+      note.className = 'feedback-note';
+
+      try {
+        const payload = {
+          formType: 'feedback',
+          fullName: fd.get('fullName'),
+          email: fd.get('email'),
+          phone: fd.get('phone'),
+          problems: fd.get('problems'),
+          suggestions: fd.get('suggestions') || ''
+        };
+
+        await fetch(APPLY_WEB_APP_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(payload)
+        });
+
+        note.textContent = 'Thank you! Your feedback has been sent.';
+        note.className = 'feedback-note success';
+        feedbackForm.reset();
+      } catch (err) {
+        note.textContent = 'Something went wrong. Please try again or email us directly.';
+        note.className = 'feedback-note error';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Send Feedback';
+      }
+    });
+  }
 
   // Mobile menu toggle
   const menuBtn = document.querySelector('.menu-btn');
