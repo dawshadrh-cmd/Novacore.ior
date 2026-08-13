@@ -1732,6 +1732,239 @@ header.nav .links a{color:rgba(255,255,255,.9)}
 }
 </style>
 
+
+<style id="final-responsive-brand-v7">
+/* ===== Final mobile/tablet polish ===== */
+html,body{max-width:100%;overflow-x:hidden}
+.container,.candidate-inner,.hero-inner{max-width:100%}
+
+/* Forms never escape their white container */
+.contact-form,
+.contact-form *,
+.apply form,
+.apply form *,
+form input,
+form textarea,
+form select,
+form button{
+  max-width:100%;
+  box-sizing:border-box;
+}
+.contact-form input,
+.contact-form textarea,
+.contact-form select,
+.apply input,
+.apply textarea,
+.apply select{
+  width:100%;
+  min-width:0;
+}
+.contact-form .field,
+.contact-form .form-row,
+.apply .field,
+.apply .form-row{
+  min-width:0;
+  width:100%;
+}
+@media(max-width:900px){
+  .contact-form,
+  .apply form{
+    width:100%;
+    max-width:680px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+@media(max-width:600px){
+  .contact-form,
+  .apply form{
+    width:100%;
+    padding-left:0;
+    padding-right:0;
+  }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select,
+  .apply input,
+  .apply textarea,
+  .apply select{
+    width:100%;
+    font-size:13px;
+    padding-left:13px;
+    padding-right:13px;
+  }
+  .contact-form .form-row,
+  .apply .form-row{
+    display:grid;
+    grid-template-columns:1fr!important;
+    gap:12px;
+  }
+}
+
+/* Candidate section: centered and compact */
+.candidate-section .candidate-inner{
+  width:100%;
+  max-width:1040px;
+  margin:0 auto;
+}
+@media(max-width:900px){
+  .candidate-section{
+    text-align:center;
+  }
+  .candidate-section .candidate-inner{
+    grid-template-columns:minmax(0,720px);
+    justify-content:center;
+    gap:26px;
+  }
+  .candidate-section .candidate-inner>div{
+    width:100%;
+    max-width:720px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .candidate-inner>div:first-child>p:not(.eyebrow){
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .candidate-actions{
+    justify-content:center;
+  }
+  .candidate-card{
+    width:100%;
+    max-width:520px;
+    margin:0 auto;
+    text-align:left;
+  }
+}
+@media(max-width:600px){
+  .candidate-section .container{
+    padding-left:16px!important;
+    padding-right:16px!important;
+  }
+  .candidate-section .candidate-inner{
+    grid-template-columns:minmax(0,1fr);
+    width:100%;
+  }
+  .candidate-section .candidate-inner>div{
+    width:100%;
+    max-width:100%;
+  }
+  .candidate-inner h2{
+    font-size:28px;
+    max-width:100%;
+  }
+  .candidate-card{
+    max-width:360px;
+    min-height:155px;
+    margin:0 auto;
+    padding:16px;
+    border-radius:14px;
+  }
+  .candidate-actions{
+    width:100%;
+    max-width:360px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+
+/* Hero visual: centered branding on tablet/iPad/mobile */
+@media(max-width:1080px){
+  .hero-visual{
+    width:100%;
+    min-width:0;
+    justify-content:center;
+  }
+  .hero-photo{
+    width:100%;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .brand-visual{
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:min(350px,48vw);
+  }
+  .brand-tag.one{right:-6%}
+  .brand-tag.two{left:-6%}
+}
+@media(max-width:900px){
+  .hero-photo{
+    min-height:390px;
+  }
+  .brand-visual{
+    width:min(320px,48vw);
+  }
+  .office-copy{
+    left:5%;
+    top:12%;
+    text-shadow:0 2px 12px rgba(2,6,23,.25);
+  }
+}
+@media(max-width:700px){
+  .hero-visual{
+    min-height:350px;
+    padding:0;
+  }
+  .hero-photo{
+    min-height:350px;
+    width:100%;
+    border-radius:0 0 0 42px;
+  }
+  .brand-visual{
+    width:min(275px,66vw);
+    left:50%;
+    top:52%;
+    transform:translate(-50%,-50%);
+  }
+  .brand-core{
+    width:68%;
+    height:68%;
+  }
+  .brand-monogram{
+    width:58px;
+    height:58px;
+    font-size:36px;
+    margin-bottom:8px;
+  }
+  .brand-core strong{font-size:17px}
+  .brand-core small{font-size:6.5px}
+  .brand-ring{inset:3%}
+  .brand-tag{
+    font-size:8px;
+    padding:6px 8px;
+    border-radius:8px;
+  }
+  .brand-tag.one{right:-9%;top:13%}
+  .brand-tag.two{left:-9%;bottom:16%}
+  .brand-tag.three{right:-5%;bottom:4%}
+  .office-copy{
+    left:5%;
+    top:7%;
+    font-size:18px;
+    line-height:1.05;
+  }
+}
+@media(max-width:420px){
+  .hero-visual{min-height:315px}
+  .hero-photo{min-height:315px}
+  .brand-visual{
+    width:min(235px,64vw);
+    top:53%;
+  }
+  .brand-monogram{
+    width:50px;height:50px;
+    font-size:31px;
+  }
+  .brand-core strong{font-size:15px}
+  .brand-core small{font-size:5.5px}
+  .brand-tag{font-size:7px;padding:5px 7px}
+  .brand-tag.three{display:none}
+  .office-copy{font-size:16px}
+}
+</style>
+
 </head>
 <body>
 
