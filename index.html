@@ -1386,6 +1386,352 @@ header.nav .links a{color:rgba(255,255,255,.9)}
 }
 </style>
 
+
+<style id="candidate-responsive-v5">
+/* Candidate section responsive sizing */
+.candidate-section .candidate-inner{
+  width:100%;
+  max-width:1180px;
+}
+.candidate-section .candidate-card{
+  min-width:0;
+  width:100%;
+}
+@media (max-width:1100px){
+  .candidate-section{padding:70px 0}
+  .candidate-inner{
+    grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);
+    gap:42px;
+  }
+  .candidate-inner h2{
+    font-size:clamp(32px,4.2vw,44px);
+  }
+  .candidate-card{
+    min-height:230px;
+    padding:25px;
+  }
+}
+@media (max-width:900px){
+  .candidate-section{padding:64px 0}
+  .candidate-inner{
+    grid-template-columns:1fr;
+    gap:30px;
+    max-width:760px;
+  }
+  .candidate-inner h2{
+    font-size:clamp(30px,5vw,40px);
+  }
+  .candidate-inner>div:first-child>p:not(.eyebrow){
+    font-size:14px;
+    line-height:1.65;
+  }
+  .candidate-card{
+    min-height:205px;
+    padding:22px;
+    transform:none;
+  }
+  .candidate-icon{
+    width:46px;height:46px;
+    margin-bottom:24px;
+    font-size:22px;
+  }
+  .candidate-card strong{font-size:18px}
+  .candidate-card span{font-size:11px}
+  .candidate-line{margin:22px 0 14px}
+}
+@media (max-width:600px){
+  .candidate-section{padding:50px 0}
+  .candidate-section .container{
+    padding-left:18px;
+    padding-right:18px;
+  }
+  .candidate-inner{
+    gap:24px;
+  }
+  .candidate-inner h2{
+    font-size:30px;
+    line-height:1.12;
+    margin:12px 0;
+  }
+  .candidate-inner .eyebrow{font-size:9px}
+  .candidate-inner>div:first-child>p:not(.eyebrow){
+    font-size:13px;
+    line-height:1.6;
+  }
+  .candidate-actions{
+    gap:9px;
+    margin-top:20px;
+  }
+  .candidate-actions .btn{
+    min-height:44px;
+    padding:11px 15px;
+    font-size:12px;
+  }
+  .candidate-card{
+    min-height:175px;
+    padding:18px;
+    border-radius:14px;
+  }
+  .candidate-icon{
+    width:40px;height:40px;
+    margin-bottom:18px;
+    border-radius:10px;
+    font-size:19px;
+  }
+  .candidate-card strong{font-size:16px}
+  .candidate-card span{font-size:10px;margin-top:5px}
+  .candidate-line{margin:17px 0 11px}
+  .candidate-status{font-size:10px!important}
+}
+@media (max-width:420px){
+  .candidate-section{padding:42px 0}
+  .candidate-section .container{
+    padding-left:15px;
+    padding-right:15px;
+  }
+  .candidate-inner h2{font-size:27px}
+  .candidate-card{
+    min-height:155px;
+    padding:15px;
+  }
+  .candidate-icon{
+    width:36px;height:36px;
+    margin-bottom:14px;
+    font-size:17px;
+  }
+  .candidate-card strong{font-size:15px}
+  .candidate-card span{font-size:9px}
+  .candidate-line{margin:14px 0 9px}
+}
+
+/* iPad / tablet: keep navbar clean and black text */
+@media (min-width:601px) and (max-width:1100px){
+  header.nav{
+    width:calc(100% - 24px);
+    max-width:calc(100% - 24px);
+    background:rgba(255,255,255,.94)!important;
+    border-color:rgba(15,23,42,.10);
+    box-shadow:0 14px 38px rgba(15,23,42,.13);
+  }
+  header.nav::before{
+    background:linear-gradient(90deg,rgba(16,185,129,.05),transparent 45%,rgba(37,99,235,.05));
+  }
+  header.nav .brand-name{color:#111827}
+  header.nav .brand-sub{color:#64748B}
+  header.nav .links a{
+    color:#111827!important;
+  }
+  header.nav .links a.active{color:#047857!important}
+  header.nav .nav-cta{color:#fff!important}
+}
+
+/* Prevent candidate content from ever causing horizontal overflow */
+.candidate-section,
+.candidate-section .container,
+.candidate-inner,
+.candidate-inner > *,
+.candidate-card,
+.candidate-actions{
+  max-width:100%;
+  min-width:0;
+}
+</style>
+
+
+<style id="personal-brand-hero-v6">
+/* ===== Personal Brand Hero Visual ===== */
+.hero-photo{
+  position:relative;
+  overflow:hidden;
+}
+.hero-photo::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    radial-gradient(circle at 72% 28%,rgba(52,211,153,.20),transparent 25%),
+    linear-gradient(135deg,rgba(11,18,32,.12),transparent 45%,rgba(16,185,129,.10));
+  pointer-events:none;
+}
+.brand-visual{
+  position:absolute;
+  z-index:5;
+  left:9%;
+  top:50%;
+  transform:translateY(-50%);
+  width:min(360px,62%);
+  aspect-ratio:1/1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  animation:brandVisualFloat 6s ease-in-out infinite;
+}
+.brand-visual::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(16,185,129,.18),transparent 67%);
+  filter:blur(8px);
+  animation:brandAura 4.5s ease-in-out infinite;
+}
+.brand-ring{
+  position:absolute;
+  inset:5%;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.30);
+  box-shadow:0 0 0 1px rgba(16,185,129,.08),0 0 55px rgba(16,185,129,.15);
+  animation:brandRing 12s linear infinite;
+}
+.brand-ring::before,
+.brand-ring::after{
+  content:"";
+  position:absolute;
+  width:9px;height:9px;
+  border-radius:50%;
+  background:#34D399;
+  box-shadow:0 0 18px rgba(52,211,153,.9);
+}
+.brand-ring::before{top:10%;left:19%}
+.brand-ring::after{bottom:15%;right:13%;background:#60A5FA;box-shadow:0 0 18px rgba(96,165,250,.8)}
+.brand-core{
+  position:relative;
+  z-index:2;
+  width:68%;
+  height:68%;
+  border-radius:28%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(145deg,rgba(11,18,32,.95),rgba(24,34,49,.88));
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:
+    0 28px 60px rgba(2,6,23,.35),
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 0 55px rgba(16,185,129,.12);
+  backdrop-filter:blur(12px);
+}
+.brand-monogram{
+  position:relative;
+  width:82px;height:82px;
+  display:grid;
+  place-items:center;
+  margin-bottom:11px;
+  border-radius:22px;
+  background:linear-gradient(145deg,#2563EB,#10B981);
+  color:#fff;
+  font-size:50px;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:-.08em;
+  box-shadow:0 14px 32px rgba(16,185,129,.25);
+  text-shadow:0 2px 10px rgba(2,6,23,.28);
+  animation:monogramGlow 3.8s ease-in-out infinite;
+}
+.brand-monogram::after{
+  content:"";
+  position:absolute;
+  inset:4px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.24);
+}
+.brand-core strong{
+  color:#fff;
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:-.035em;
+}
+.brand-core small{
+  color:#A7F3D0;
+  margin-top:5px;
+  font-size:9px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.brand-tag{
+  position:absolute;
+  z-index:6;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:9px 12px;
+  border-radius:10px;
+  background:rgba(255,255,255,.92);
+  color:#0F172A;
+  border:1px solid rgba(255,255,255,.70);
+  box-shadow:0 12px 30px rgba(15,23,42,.18);
+  backdrop-filter:blur(10px);
+  font-size:10px;
+  font-weight:700;
+  white-space:nowrap;
+}
+.brand-tag::before{
+  content:"";
+  width:6px;height:6px;
+  border-radius:50%;
+  background:#10B981;
+  box-shadow:0 0 10px rgba(16,185,129,.75);
+}
+.brand-tag.one{right:-4%;top:17%;animation:tagOne 4.5s ease-in-out infinite}
+.brand-tag.two{left:-2%;bottom:15%;animation:tagTwo 5.2s ease-in-out infinite}
+.brand-tag.three{right:6%;bottom:5%;animation:tagThree 4.8s ease-in-out infinite}
+@keyframes brandVisualFloat{
+  0%,100%{transform:translateY(-50%) translate3d(0,0,0)}
+  50%{transform:translateY(calc(-50% - 9px)) translate3d(4px,0,0)}
+}
+@keyframes brandAura{
+  0%,100%{transform:scale(.96);opacity:.65}
+  50%{transform:scale(1.08);opacity:1}
+}
+@keyframes brandRing{
+  to{transform:rotate(360deg)}
+}
+@keyframes monogramGlow{
+  0%,100%{box-shadow:0 14px 32px rgba(16,185,129,.22),0 0 0 rgba(52,211,153,0)}
+  50%{box-shadow:0 18px 38px rgba(16,185,129,.30),0 0 25px rgba(52,211,153,.16)}
+}
+@keyframes tagOne{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+@keyframes tagTwo{
+  0%,100%{transform:translate(0,0)}
+  50%{transform:translate(6px,-6px)}
+}
+@keyframes tagThree{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(7px)}
+}
+@media(max-width:1100px){
+  .brand-visual{width:min(330px,60%);left:7%}
+  .brand-monogram{width:72px;height:72px;font-size:44px}
+  .brand-core strong{font-size:21px}
+}
+@media(max-width:900px){
+  .hero-photo{min-height:360px}
+  .brand-visual{width:min(300px,55%);left:10%}
+  .brand-tag{font-size:9px;padding:8px 10px}
+}
+@media(max-width:600px){
+  .brand-visual{width:260px;max-width:72%;left:50%;top:52%}
+  .brand-core{width:67%;height:67%;border-radius:25%}
+  .brand-monogram{width:60px;height:60px;font-size:37px;border-radius:17px}
+  .brand-core strong{font-size:18px}
+  .brand-core small{font-size:7px}
+  .brand-tag.one{right:-2%;top:10%}
+  .brand-tag.two{left:-5%;bottom:15%}
+  .brand-tag.three{right:-1%;bottom:3%}
+}
+@media(max-width:380px){
+  .brand-visual{width:220px}
+  .brand-tag{font-size:8px;padding:6px 8px}
+  .brand-tag.three{display:none}
+}
+</style>
+
 </head>
 <body>
 
@@ -1474,13 +1820,16 @@ header.nav .links a{color:rgba(255,255,255,.9)}
 
       <div class="hero-photo">
         <div class="photo-overlay"></div>
-        <div class="laptop">
-          <div class="laptop-screen">
-            <div class="nc-mark">N</div>
+        <div class="brand-visual" aria-label="NovaCore personal brand">
+          <div class="brand-ring"></div>
+          <div class="brand-core">
+            <div class="brand-monogram">N</div>
             <strong>NovaCore</strong>
             <small>Talent Acquisition Partners</small>
           </div>
-          <div class="laptop-base"></div>
+          <div class="brand-tag one">Talent Strategy</div>
+          <div class="brand-tag two">People × Growth</div>
+          <div class="brand-tag three">TA • OD • RPO</div>
         </div>
         <div class="office-copy">Talent<br><b>starts here.</b></div>
       </div>
